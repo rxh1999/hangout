@@ -28,7 +28,17 @@ class InputEmitThread extends Thread {
  */
 @Log4j2
 public class Main {
+
+    protected static String[] fakeArgs() {
+        List<String> argList = new ArrayList<>();
+        argList.add("-f");
+        argList.add("D:\\ideaProjects\\hangout\\conf\\simpletest.yml");
+        return argList.toArray(new String[0]);
+    }
+
     public static void main(String[] args) {
+
+        args = fakeArgs();
 
         //Parse CommandLine arguments
         CommandLineValues cm = new CommandLineValues(args);
